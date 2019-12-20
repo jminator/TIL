@@ -4,6 +4,8 @@
 # where Yi = eX;. Draw a histogram of Y and compare it to the PDF you
 # found in part (a).
 
+library(tidyverse)
+
 pdf_y <- function(Y) {
   pY <-  (1/Y) * (1/sqrt(2*pi)) * exp((-(log(Y))^2) / 2)
   return(pY)
