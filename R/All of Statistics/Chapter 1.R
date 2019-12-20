@@ -16,8 +16,7 @@ main <- function(){
   n <- 1000
   df <- data.frame(proportion <- FlipCoin(n), trials <- (1:n))
   head(df)
-  
-  windows()
+
   ggplot(data = df, aes(x = trials, y = proportion))+
     scale_y_continuous(breaks = c(0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1), limits=c(0,1))+
     geom_line(colour = "Blue")
