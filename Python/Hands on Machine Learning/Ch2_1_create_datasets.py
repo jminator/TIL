@@ -65,8 +65,7 @@ def split_train_test_by_id(data, test_ratio, id_column):
     return data.loc[~in_test_set], data.loc[in_test_set]
 housing_with_id = housing.reset_index()  # adds an 'index' column
 train_set, test_set = split_train_test_by_id(housing_with_id, 0.2, "index")
-print(housing.head())
-print(test_set.head())
+
 # To use the row index as an identifier, need to make sure that new data appends to
 # the end of the dataset & no row ever gets deleted.
 
@@ -101,5 +100,3 @@ for train_index, test_index in split.split(housing, housing["income_cat"]):
 # Now remove the income_cat feature so the data is back to its original state:
 for set_ in (strat_test_set, strat_train_set):
     set_.drop("income_cat", axis = 1, inplace = True)
-
-print(strat_train_set.head())
