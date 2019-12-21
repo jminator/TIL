@@ -21,3 +21,8 @@ attributes = ["median_house_value", "median_income", "total_rooms",
     "housing_median_age"]
 scatter_matrix(housing[attributes], figsize=(12,8))
 plt.show()
+
+# Experimenting with Attribute Combinations
+housing["rooms_per_household"] = housing["total_rooms"]/housing["households"]
+housing["bedrooms_per_room"] = housing["total_bedrooms"]/housing["total_rooms"]
+housing["population_per_household"] = housing["population"]/housing["household"]
