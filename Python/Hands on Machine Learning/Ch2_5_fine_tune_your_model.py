@@ -5,6 +5,7 @@ housing_prepared = st.housing_prepared.copy()
 housing_labels = st.housing_labels.copy()
 import numpy as np
 import scipy.stats as stats
+from sklearn.metrics import mean_squared_error
 
 # There are many ways to fine-tune the models
 # 1. Grid search
@@ -104,4 +105,15 @@ final_model = grid_search.best_estimator_
 X_test = cd.strat_test_set.drop("median_house_value", axis = 1)
 y_test = cd.strat_test_set["median_house_value"].copy()
 
+X_test_prepared = tp.full_pipeline.transform(X_test)
+final_predictions = final_model.predict(X_test_prepared)
 
+final_mse = mean_squared_error(y_test, final_predictions)
+final_rmse = np.sqrt(final_mse)
+
+# however, a point estimate of the error may not be enough to tell how precise the estimate is
+# we can compute confidence interval for the generalization error
+confidence = 0.95
+squared_errors = (final_predictions - y_test) ** 2
+np.sqrt(stats.t.interval(confidence, len(squared_errors)-1, loc=squared_errors.mean(),
+        scale=stats.sem(squared_errors)))

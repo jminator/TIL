@@ -60,13 +60,14 @@ def display_scores(scores):
     print("Mean: ", scores.mean().round(2))
     print("Std: ", scores.std().round(2))
 
-display_scores(tree_rmse_scores)
+# display_scores(tree_rmse_scores)
 # It shows that the decision tree regressor is not doing well either.
 
 
 ## RANDOM FOREST REGRESSOR ##
 # Uses many decision trees on random subsets of the features, then average out their predictions.
 # Ensemble learning: building a model on top of many other models.
+
 # from sklearn.ensemble import RandomForestRegressor
 # forest_reg = RandomForestRegressor()
 # forest_reg.fit(housing_prepared, housing_labels)
