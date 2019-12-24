@@ -1,4 +1,4 @@
-## Ch8 ex 1
+## Chapter 8 ex 1
 # Consider the data in Example 8.6. Find the plug-in estimate of the
 # correlation coefficient. Estimate the standard error using the bootstrap.
 # Find a 95 percent confidence interval using the Normal, pivotal, and

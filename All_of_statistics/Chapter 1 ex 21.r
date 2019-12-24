@@ -1,12 +1,11 @@
-library(tidyverse)
-
-# Chapter 1. ex 21. 
+## Chapter 1. ex 21. 
 # Suppose a coin has probability P of falling heads
 # up. If we flip the coin many times, we would expect the proportion of
 # heads to be near p. We will make this formal later. Take P = .3 and
 # n = 1,000 and simulate n coin flips. Plot the proportion of heads as a
 # function of n. Repeat for P = .03.
 
+library(tidyverse)
 FlipCoin <- function(n) {
   p <- 0.03
   k <- 0

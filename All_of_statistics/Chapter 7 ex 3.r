@@ -1,5 +1,4 @@
-## Ch7. ex 3
-
+## Chapter 7 ex 3
 # (Computer Experiment.) Generate 100 observations from a N(O,l) distribution.
 # Compute a 95 percent confidence band for the CDF F (as
 # described in the appendix). Repeat this 1000 times and see how often

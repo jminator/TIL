@@ -1,4 +1,4 @@
-## Ch3. ex9
+## Chapter 3 ex9
 # (Computer Experiment.) Let Xl, X 2 , ... , Xn be N(O, 1) random variables
 # and let Xn = n-IL~=IXi' Plot Xn versus n for n = 1, ... ,10,000.
 # Repeat for Xl, X 2 , .. . , Xn rv Cauchy. Explain why there is such a difference.

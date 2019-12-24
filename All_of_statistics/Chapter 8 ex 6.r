@@ -1,9 +1,4 @@
-n <- 100
-mu <- 5
-x <- rnorm(n, mu,1)
-theta_hat <- exp(mean(x))
-za <- abs(qnorm(0.05/2, 0,1))
-## Ch8. ex 6
+## Chapter 8 ex 6
 # (Computer Experiment.) Let Xl,...,Xn Normal(mu, 1). Let theta = exp(mu) and let theta_hat = exp(X_bar). 
 # Create a data set (using mu = 5) consisting of n=100 observations.
 # (a) Use the bootstrap to get the se and 95 percent CI for theta.
@@ -11,6 +6,12 @@ za <- abs(qnorm(0.05/2, 0,1))
 # of the distribution of theta_hat. Compare this to the true sampling distribution of theta_hat.
 
 library(tidyverse)
+n <- 100
+mu <- 5
+x <- rnorm(n, mu,1)
+theta_hat <- exp(mean(x))
+za <- abs(qnorm(0.05/2, 0,1))
+
 # (a) bootstrap to get theta_star
 B <- 1000
 Tboot <- c()

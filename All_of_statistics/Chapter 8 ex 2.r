@@ -1,4 +1,4 @@
-## Ch8. ex 2
+## Chapter 8 ex 2
 # (Computer Experiment.) Conduct a simulation to compare the various
 # bootstrap confidence interval methods. Let n = 50 and let T(F) =
 # integral{(x-mu)^3 dF(x)} / sigma^3 be the skewness. Draw Y1 , ... , Yn ~ N(0,l) and

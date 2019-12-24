@@ -1,4 +1,4 @@
-# Chapter 2 ex 15
+## Chapter 2 ex 15
 # (A universal random number generator.) Let X have a continuous, strictly
 # increasing CDF F. Let Y = F(X). Find the density of Y. This is called
 # the probability integral transform. Now let U rv Uniform(O,l) and let

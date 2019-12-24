@@ -1,4 +1,4 @@
-# Chapter 2 ex 13
+## Chapter 2 ex 13
 # Generate a vector x = (Xl, ... ,XlO,OOO) consisting
 # of 10,000 random standard Normals. Let Y = (YI,"" YIO,OOO)
 # where Yi = eX;. Draw a histogram of Y and compare it to the PDF you
