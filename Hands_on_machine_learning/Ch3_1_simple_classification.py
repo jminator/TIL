@@ -1,3 +1,4 @@
+# %%
 from sklearn.datasets import fetch_openml
 mnist = fetch_openml('mnist_784', version=1) # loads mnist dataset
 # mnist.keys() 
@@ -20,6 +21,7 @@ some_digit = X[0]
 
 # since the label is a string, convert it to numbers
 
+# %%
 import numpy as np
 y = y.astype(np.uint8) # it's 'uint' not 'unit'
 
