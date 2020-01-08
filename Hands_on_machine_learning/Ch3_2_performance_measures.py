@@ -89,3 +89,47 @@ y_train_pred_90 = (y_scores >= threshold_90_precision)
 # to check,
 precision_score(sc.y_train_5, y_train_pred_90)
 recall_score(sc.y_train_5, y_train_pred_90)
+
+## THE ROC CURVE ##
+# Receiver Operating Characteristic curve.
+# Similar to the precision/recall curve but instead of plotting precision vs. recall,
+# it plots the 'true positive rate(recall)' vs 'false positive rate'[FPR = FP/(FP+TN) = 1-true negative rate(TNR = TN/(FP+TN) )]
+# TNR = 'specificity'. Hence the ROC curve plots sensitivity(recall) vs. 1- specificity
+from sklearn.metrics import roc_curve
+fpr, tpr, thresholds = roc_curve(sc.y_train_5, y_scores)
+# Then we can plot the FPR against TPR using Matplotlib
+def plot_roc_curve(fpr, tpr, label=None):
+    plt.plot(fpr, tpr, linewidth=2, label=label)
+    plt.plot([0,1], [0,1], 'k--') # dashed diagonal
+    [...] # add axis labels and grid
+plot_roc_curve(fpr, tpr)
+plt.show()
+# Again, there is a trade-off. Higher the recall(TPR), the more false positives(FPR).
+# The dotted line represents the ROC curve of a purely random classifier.
+# A good classifier stays as far away from that line as possible toward the top-left corner.
+
+# One way to compare the classifiers is to measure the area under the curve(AUC).
+# A perfect classifier would have AUC = 1, whereas a purely randome one would have AUC = 0.5
+from sklearn.metrics import roc_auc_score
+roc_auc_score(sc.y_train_5, y_scores) # gives about 0.96
+
+# Use PR curve if the positive class is rare or when you care more about the false positives than the false negatives.
+# Otherwise use the ROC curve
+
+
+## Example: RandomForestClassifier ##
+from sklearn.ensemble import RandomForestClassifier
+forest_clf = RandomForestClassifier(random_state=42)
+y_probas_forest = cross_val_predict(forest_clf, sc.X_train, sc.y_train_5, cv=3, method="predict_prova")
+# RFClassifier has predict_prova() instead of decision_function(). 
+# It gives probabilities that the given instance belongs to the given class eg. 70% chance that the image is 5
+
+y_scores_forest = y_probas_forest[:,1] # score = proba of positive class
+fpr_forest, tpr_forest, thresholds_forest = roc_curve(sc.y_train_5, y_scores_forest)
+plt.plot(fpr, tpr, "b:", label="SGD")
+plot_roc_curve(fpr_forest, tpr_forest, "Random Forest")
+plt.legend(loc="lower right")
+plt.show() # shows that RF beats SGD
+roc_auc_score(sc.y_train_5, y_scores_forest) # gives about 0.99
+
+
