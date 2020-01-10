@@ -1,1 +1,4 @@
 Rplots.pdf
+__pycache__
+.gitignore
+Hands_on_machine_learning/datasets
