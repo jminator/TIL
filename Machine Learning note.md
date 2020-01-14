@@ -1,4 +1,4 @@
-# TIL - Machine Learning Note
+# 'Machine Learning' Book - Note
 
 
 ## I. Intro
@@ -59,13 +59,14 @@ H(P,Q) = H(P) + D(P||Q)
 &rarr; to the output y
 * If the network includes feedback connection, it is called **recurrent neural network**
 * Consists of input layer, hidden layer, output layer
+  
 #### 6.2 Gradient-based learning
 * Most modern NN are trained using maximum likelihood(ml)
 * Meaning cost function = -ve log-likelihood or **cross entropy** between the training data and the model distribution
 * J(theta) = -E( ln p(y|x) )
 * Softmax: Used when the output has n discrete outcomes. Each z in n has prob [0,1] and the sum of the z's = 1
 * softmax(z) = exp(zi) / summation(exp(zi))
-
+  
 ### 7. Regularization
 #### Intro
 * Reduce the test errors at the expense of increased training error
@@ -73,11 +74,12 @@ H(P,Q) = H(P) + D(P||Q)
     1) Put extra constraints on ML model eg) add restriction on parameter values
     2) Add extra terms in the objective functions
     3) Ensemble methods. Combine multiple hypotheses
+  
 #### 7.1 Parameter norm penalties
 * Add PNP term omega to the objective function J
 * L2 parameter regularization (ridge regression)
 * L1 parameter regularization (LASSO)
-
+  
 #### 7.2 Bagging and dropout
 ##### Bagging
 * Short for **bootstrap aggregating**.
@@ -85,8 +87,9 @@ H(P,Q) = H(P) + D(P||Q)
 * The technique allows the same kind of model, algorithm, objective function to be reused several times.
 * The techniques employing this strategy is called **Ensemble methods**.
 * This is done by constructing k different bootstrap datasets (i.e. draw sample with replacement).
-* Boosting: construct an ensemble with hgiher capacity than the individual models.  
-Applied to add NNs to the ensemble, and to interpret an individual NN as an ensemble adding hidden units to the network
+* Boosting: construct an ensemble with higher capacity than the individual models.  
+Applied to add NNs to the ensemble, and to interpret an individual NN as an ensemble adding hidden units to the network  
+  
 ##### Dropout
 * Computationally less expensive than bagging but powerful regularization technique.
 * This time, the models share the parameters, with each model inheriting a different subset of parameters from the parent NN
@@ -102,7 +105,7 @@ Applied to add NNs to the ensemble, and to interpret an individual NN as an ense
 * However, for deep models, dropout is not equivalent to L2 or L1.
 * Dropout prevents the weights from being dependent to each other.
 * Destroying extracted feature rather than original values allows the destruction process to make use of all the knowledge about the input distribution that the model has acquired so far.
-
+  
 ### 8. Optimization for training deep models
 * Aims to find theta of NN that significantly reduce the cost function J(theta)
 #### 8.1 Empirical risk minimization
