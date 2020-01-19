@@ -1,3 +1,5 @@
+
+## Function for the coverage probability
 cp <- function(true_p, ci_lower, ci_upper){
   
   ci <- cbind(ci_lower, ci_upper)
@@ -16,7 +18,7 @@ cp <- function(true_p, ci_lower, ci_upper){
   return(prob_list)
 }
 n = 100
-q = qnorm(0.025) # -1.96
+q = qnorm(0.025) # Z with alpha = 0.05
 p_hat = (0:n)/n
 true_p = as.vector(seq(0,1,by=0.001))
 
