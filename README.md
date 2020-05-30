@@ -1,2 +1,2 @@
 # Today I learned
-Daily(hopefully) update of what I learned about programming.
+Update of what I learned about statistics & machine learning.
